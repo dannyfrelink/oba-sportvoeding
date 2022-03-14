@@ -32,11 +32,14 @@ function render(data) {
             <article>
               <h2>${item.titles[0]}</h2>
               <p>${item.summaries ? item.summaries[0] : 'Geen samenvatting'}</p>
-              <img src="${
-                item.coverimages ? item.coverimages[1] : 'Geen samenvatting'
-              }">
+              <img src="${item.coverimages ? item.coverimages[1] : 'Geen samenvatting'
+      }">
             </article>
           `;
     main.insertAdjacentHTML('beforeend', html);
   });
 }
+
+// const url = 'https://zoeken.oba.nl/api/v1/search/?q=%22voeding%22&refine=true&authorization=16c19e6083308c984c452600134989ba&sort=act_dt_asc&output=json' //&branch=OBA%20geuzenveld'
+// fetch(url).then(response => response.json())
+//   .then(data => console.table(data.results))
