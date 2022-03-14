@@ -1,4 +1,4 @@
-const section = document.querySelector('section');
+import { section } from "./variables.js";
 
 // render data
 export default function render(data) {

@@ -8,7 +8,3 @@ export default function handleRoutes() {
         }
     })
 }
-
-// const fetchWithRoute = (search) => {
-//     fetchData(search)
-// }
