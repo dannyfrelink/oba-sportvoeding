@@ -12,14 +12,14 @@ const config = {
   Authorization: `Bearer ${secret}`
 };
 
-fetch(url, config)
+fetch('../voeding.json', config)
   .then(response => response.json())
   .then(data => render(data))
   .catch(err => console.log(err));
 
 // render data
 function render(data) {
-  const results = data.results;
+  const results = data;
   console.dir(results);
   results.forEach((item, i) => {
     const html = `
