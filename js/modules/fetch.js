@@ -1,22 +1,23 @@
+// import renderHash from "./renderHash.js";
 import { renderSport, renderVoeding, renderSportvoeding, renderDieet } from "./renderHome.js";
 import { cors, endpoint, key, detail, pagesize, config } from './variables.js'
 
-export default function fetchData(searchValue) {
-    let query;
-    searchValue ? query = searchValue : query = 'voeding';
+// export default function fetchData(searchValue) {
+//     // let query;
+//     // searchValue ? query = searchValue : query = 'voeding';
 
-    const url = `${cors}${endpoint}${query}&authorization=${key}&detaillevel=${detail}&pagesize=${pagesize}&output=json`;
+//     const url = `${cors}${endpoint}${searchValue}&authorization=${key}&detaillevel=${detail}&pagesize=${pagesize}&output=json`;
 
-    fetch(url, config)
-        .then(response => response.json())
-        .then(data => render(data))
-        .catch(() => {
-            fetch('../voeding.json')
-                .then(response => response.json())
-                .then(data => render(data))
-                .catch(err => console.error(err));
-        })
-}
+//     fetch(url, config)
+//         .then(response => response.json())
+//         .then(data => renderHash(data))
+//         .catch(() => {
+//             fetch('../voeding.json')
+//                 .then(response => response.json())
+//                 .then(data => render(data))
+//                 .catch(err => console.error(err));
+//         })
+// }
 
 export const fetchSportData = () => {
     const url = `${cors}${endpoint}sport&authorization=${key}&detaillevel=${detail}&pagesize=${pagesize}&output=json`;

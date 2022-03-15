@@ -14,5 +14,6 @@ const ulSport = document.querySelector('#sport ul');
 const ulVoeding = document.querySelector('#voeding ul');
 const ulSportvoeding = document.querySelector('#sportvoeding ul');
 const ulDieet = document.querySelector('#dieet ul');
+const buttons = document.querySelectorAll('button');
 
-export { cors, endpoint, key, detail, pagesize, config, ulSport, ulVoeding, ulSportvoeding, ulDieet }
+export { cors, endpoint, key, detail, pagesize, config, ulSport, ulVoeding, ulSportvoeding, ulDieet, buttons }

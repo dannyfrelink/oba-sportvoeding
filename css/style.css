@@ -92,3 +92,11 @@ button::after {
 	font-size: 130%;
 	margin-left: 0.3rem;
 }
+
+.hidden {
+	display: none;
+}
+
+.show {
+	display: block;
+}
