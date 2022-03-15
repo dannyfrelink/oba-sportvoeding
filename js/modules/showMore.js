@@ -13,6 +13,10 @@ export default function showMore(e, search) {
         }
     });
 
+    // infoText.forEach(text => {
+    //     console.log(text)
+    // })
+
     buttons.forEach(button => {
         button.classList.add('hidden');
     })

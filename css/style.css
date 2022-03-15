@@ -66,6 +66,10 @@ section ul {
 	margin-top: 1rem;
 }
 
+section article:nth-of-type(n+6) {
+	display: none;
+}
+
 article+article {
 	margin-left: 1rem;
 }
