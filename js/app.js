@@ -1,10 +1,8 @@
 import handleRoutes from "./modules/router.js";
-import { fetchSportData, fetchVoedingData, fetchSportvoedingData, fetchDieetData } from "./modules/fetch.js";
-import { buttons } from "./modules/variables.js";
+import { fetchSportData, fetchNutritionData, fetchSportsNutritionData, fetchDietData } from "./modules/fetch.js";
 
 handleRoutes();
-// fetchData('sport');
 fetchSportData()
-fetchVoedingData()
-fetchSportvoedingData()
-fetchDieetData()
+fetchNutritionData()
+fetchSportsNutritionData()
+fetchDietData()

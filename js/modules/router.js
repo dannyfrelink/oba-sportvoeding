@@ -1,6 +1,5 @@
 import '../vendor/routie.min.js';
 import showMore from './showMore.js';
-// import fetchData from './fetch.js';
 
 export default function handleRoutes() {
     routie({
@@ -9,8 +8,3 @@ export default function handleRoutes() {
         }
     })
 }
-
-// const fetchWithHash = (search) => {
-
-//     fetchData()
-// }

@@ -1,4 +1,4 @@
-import { ulSport, ulVoeding, ulSportvoeding, ulDieet } from "./variables.js";
+import { ulSport, ulNutrition, ulSportsNutrition, ulDiet } from "./variables.js";
 
 // render sport data
 export const renderSport = (data) => {
@@ -18,9 +18,9 @@ export const renderSport = (data) => {
     });
 }
 
-// render voeding data
-export const renderVoeding = (data) => {
-    ulVoeding.innerHTML = '';
+// render nutrition data
+export const renderNutrition = (data) => {
+    ulNutrition.innerHTML = '';
     const results = data.results;
     results.forEach((item, i) => {
         const html = `
@@ -32,13 +32,13 @@ export const renderVoeding = (data) => {
                     </div>
                 </article>
             `;
-        ulVoeding.insertAdjacentHTML('afterbegin', html);
+        ulNutrition.insertAdjacentHTML('afterbegin', html);
     });
 }
 
-// render sportvoeding data
-export const renderSportvoeding = (data) => {
-    ulSportvoeding.innerHTML = '';
+// render sports nutrition data
+export const renderSportsNutrition = (data) => {
+    ulSportsNutrition.innerHTML = '';
     const results = data.results;
     results.forEach((item, i) => {
         const html = `
@@ -50,13 +50,13 @@ export const renderSportvoeding = (data) => {
                     </div>
                 </article>
             `;
-        ulSportvoeding.insertAdjacentHTML('afterbegin', html);
+        ulSportsNutrition.insertAdjacentHTML('afterbegin', html);
     });
 }
 
 // render dieet data
-export const renderDieet = (data) => {
-    ulDieet.innerHTML = '';
+export const renderDiet = (data) => {
+    ulDiet.innerHTML = '';
     const results = data.results;
     results.forEach((item, i) => {
         const html = `
@@ -68,7 +68,7 @@ export const renderDieet = (data) => {
                     </div>
                 </article>
             `;
-        ulDieet.insertAdjacentHTML('afterbegin', html);
+        ulDiet.insertAdjacentHTML('afterbegin', html);
     });
 }
 

@@ -12,9 +12,9 @@ const config = {
 /* Render */
 const sections = document.querySelectorAll('section');
 const ulSport = document.querySelector('#sport ul');
-const ulVoeding = document.querySelector('#voeding ul');
-const ulSportvoeding = document.querySelector('#sportvoeding ul');
-const ulDieet = document.querySelector('#dieet ul');
+const ulNutrition = document.querySelector('#voeding ul');
+const ulSportsNutrition = document.querySelector('#sportvoeding ul');
+const ulDiet = document.querySelector('#dieet ul');
 const buttons = document.querySelectorAll('button');
 
-export { cors, endpoint, key, detail, pagesize, config, sections, ulSport, ulVoeding, ulSportvoeding, ulDieet, buttons }
+export { cors, endpoint, key, detail, pagesize, config, sections, ulSport, ulNutrition, ulSportsNutrition, ulDiet, buttons }
