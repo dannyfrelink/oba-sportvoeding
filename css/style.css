@@ -1,20 +1,48 @@
 * {
   box-sizing: border-box;
 }
+
+@font-face {
+	font-family: 'Avenir';
+	src: url('../fonts/Avenir.eot?#iefix') format('embedded-opentype') url('../fonts/Avenir.ttf')  format('truetype'), url('../fonts/Avenir.svg#Avenir') format('svg');
+}
+
 html {
-  margin: 0;
-  padding: 0;
-  font: 100% / 200% 'Trebuchet MS';
+	margin: 0;
+	padding: 0;
+	font-family: 'Avenir', Helvetica, sans-serif;
 }
+
 body {
-  font-size: 1em;
-  padding: 0;
-  margin: 0;
-  color: pink;
-  background-color: #000;
-  max-width: 50em;
-  margin: 0 auto;
+	/* font-size: 1em; */
+	padding: 0;
+	margin: 0;
+	color: pink;
+	background-color: #000;
+	max-width: 50em;
+	margin: 0 auto;
 }
+
 main {
-  padding: 2rem;
+	width: 85vw;
+	margin: 4rem auto;
+}
+
+h1 {
+	display: flex;
+	font-size: 300%;
+
+	width: fit-content;
+}
+
+h1>span:first-of-type {
+	writing-mode: vertical-rl;
+}
+
+.turn {
+	transform: rotate(-90deg);
+}
+
+article {
+	margin-top: 4rem;
 }
