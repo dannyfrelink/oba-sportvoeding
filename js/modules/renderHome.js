@@ -10,6 +10,8 @@ export const renderSport = (data) => {
                     <img src="${item.coverimages ? item.coverimages[1] : 'Geen samenvatting'}">
                     <div>
                         <h2>${item.titles[0]}</h2>
+                        <p>${item.authors[0]}</p>
+                        <p>${item.languages.join(', ')}</p>
                         <p>${item.summaries ? item.summaries[0] : 'Geen samenvatting'}</p>
                     </div>
                 </article>
@@ -28,6 +30,8 @@ export const renderNutrition = (data) => {
                     <img src="${item.coverimages ? item.coverimages[1] : 'Geen samenvatting'}">
                     <div>
                         <h2>${item.titles[0]}</h2>
+                        <p>${item.authors[0]}</p>
+                        <p>${item.languages.join(', ')}</p>
                         <p>${item.summaries ? item.summaries[0] : 'Geen samenvatting'}</p>
                     </div>
                 </article>
@@ -46,6 +50,8 @@ export const renderSportsNutrition = (data) => {
                     <img src="${item.coverimages ? item.coverimages[1] : 'Geen samenvatting'}">
                     <div>
                         <h2>${item.titles[0]}</h2>
+                        <p>${item.authors[0]}</p>
+                        <p>${item.languages.join(', ')}</p>
                         <p>${item.summaries ? item.summaries[0] : 'Geen samenvatting'}</p>
                     </div>
                 </article>
@@ -58,12 +64,14 @@ export const renderSportsNutrition = (data) => {
 export const renderDiet = (data) => {
     ulDiet.innerHTML = '';
     const results = data.results;
-    results.forEach((item, i) => {
+    results.forEach((item) => {
         const html = `
                 <article>
                     <img src="${item.coverimages ? item.coverimages[1] : 'Geen samenvatting'}">
                     <div>
                         <h2>${item.titles[0]}</h2>
+                        <p>${item.authors[0]}</p>
+                        <p>${item.languages.join(', ')}</p>
                         <p>${item.summaries ? item.summaries[0] : 'Geen samenvatting'}</p>
                     </div>
                 </article>
