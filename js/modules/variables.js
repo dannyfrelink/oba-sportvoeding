@@ -10,6 +10,9 @@ const config = {
 };
 
 /* Render */
-const section = document.querySelector('section');
+const ulSport = document.querySelector('#sport ul');
+const ulVoeding = document.querySelector('#voeding ul');
+const ulSportvoeding = document.querySelector('#sportvoeding ul');
+const ulDieet = document.querySelector('#dieet ul');
 
-export { cors, endpoint, key, detail, pagesize, config, section }
+export { cors, endpoint, key, detail, pagesize, config, ulSport, ulVoeding, ulSportvoeding, ulDieet }
