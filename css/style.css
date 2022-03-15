@@ -66,9 +66,17 @@ section ul {
 	margin-top: 1rem;
 }
 
-section article:nth-of-type(n+6) {
-	display: none;
+article {
+	display: flex;
 }
+
+article * {
+	font-size: 1em;
+}
+
+/* section article:nth-of-type(n+6) {
+	display: none;
+} */
 
 article+article {
 	margin-left: 1rem;
@@ -76,10 +84,26 @@ article+article {
 
 article img {
 	height: 11.688rem;
+	max-width: 42.5vw;
 }
 
 article div {
-	display: none;
+	margin-left: 0.75rem;
+	/* display: none; */
+}
+
+article div h2 {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+article div p {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 5;
+	-webkit-box-orient: vertical;
 }
 
 button {
@@ -102,6 +126,16 @@ button::after {
 	display: none;
 }
 
-.show {
+.detail {
 	display: block;
+	overflow-x: hidden;
+}
+
+.detail article~* {
+	margin: 2rem 0 0;
+}
+
+.detail article img {
+	height: auto;
+	max-height: 11.688rem;
 }

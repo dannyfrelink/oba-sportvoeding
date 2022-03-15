@@ -11,6 +11,7 @@ const config = {
 
 /* Render */
 const sections = document.querySelectorAll('section');
+const uls = document.querySelectorAll('section ul')
 const ulSport = document.querySelector('#sport ul');
 const ulNutrition = document.querySelector('#voeding ul');
 const ulSportsNutrition = document.querySelector('#sportvoeding ul');
@@ -19,4 +20,4 @@ const ulDiet = document.querySelector('#dieet ul');
 // console.log(infoText)
 const buttons = document.querySelectorAll('button');
 
-export { cors, endpoint, key, detail, pagesize, config, sections, ulSport, ulNutrition, ulSportsNutrition, ulDiet, buttons }
+export { cors, endpoint, key, detail, pagesize, config, sections, uls, ulSport, ulNutrition, ulSportsNutrition, ulDiet, buttons }

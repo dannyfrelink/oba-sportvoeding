@@ -1,4 +1,4 @@
-import { sections, buttons } from './variables.js';
+import { sections, uls, buttons } from './variables.js';
 
 export default function showMore(e, search) {
     if (e) {
@@ -12,6 +12,10 @@ export default function showMore(e, search) {
             section.classList.add('hidden');
         }
     });
+
+    uls.forEach(ul => {
+        ul.classList.add('detail')
+    })
 
     // infoText.forEach(text => {
     //     console.log(text)
