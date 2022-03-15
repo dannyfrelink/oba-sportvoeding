@@ -53,11 +53,12 @@ h1>span>span {
 
 section {
 	display: flex;
-	width: fit-content;
+	overflow-x: scroll;
+	margin-top: 4rem;
 }
 
-article {
-	margin-top: 4rem;
+article+article {
+	margin-left: 1rem;
 }
 
 article img {
