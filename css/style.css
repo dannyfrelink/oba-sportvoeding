@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 @font-face {
@@ -14,11 +16,6 @@ html {
 }
 
 body {
-	/* font-size: 1em; */
-	padding: 0;
-	margin: 0;
-	color: pink;
-	background-color: #000;
 	max-width: 50em;
 	margin: 0 auto;
 }
@@ -30,13 +27,24 @@ main {
 
 h1 {
 	display: flex;
-	font-size: 300%;
-
+	align-items: center;
+	color: #A00078;
+	font-size: 400%;
 	width: fit-content;
+	margin: auto;
 }
 
-h1>span:first-of-type {
+h1>span {
+	display: flex;
+	color: #000000;
+	align-items: center;
 	writing-mode: vertical-rl;
+}
+
+h1>span>span {
+	writing-mode: horizontal-tb;
+	line-height: 60%;
+	margin: -0.3rem 0.4rem 0 0;
 }
 
 .turn {
