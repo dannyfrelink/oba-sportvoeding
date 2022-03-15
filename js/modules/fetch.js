@@ -25,7 +25,12 @@ export const fetchSportData = () => {
     fetch(url, config)
         .then(response => response.json())
         .then(data => renderSport(data))
-        .catch(err => console.error(err));
+        .catch(() => {
+            fetch('../voeding.json')
+                .then(response => response.json())
+                .then(data => renderSport(data))
+                .catch(err => console.error(err));
+        })
 }
 
 export const fetchVoedingData = () => {
@@ -34,7 +39,12 @@ export const fetchVoedingData = () => {
     fetch(url, config)
         .then(response => response.json())
         .then(data => renderVoeding(data))
-        .catch(err => console.error(err));
+        .catch(() => {
+            fetch('../voeding.json')
+                .then(response => response.json())
+                .then(data => renderVoeding(data))
+                .catch(err => console.error(err));
+        })
 }
 
 export const fetchSportvoedingData = () => {
@@ -43,7 +53,12 @@ export const fetchSportvoedingData = () => {
     fetch(url, config)
         .then(response => response.json())
         .then(data => renderSportvoeding(data))
-        .catch(err => console.error(err));
+        .catch(() => {
+            fetch('../voeding.json')
+                .then(response => response.json())
+                .then(data => renderSportvoeding(data))
+                .catch(err => console.error(err));
+        })
 }
 
 export const fetchDieetData = () => {
@@ -52,5 +67,10 @@ export const fetchDieetData = () => {
     fetch(url, config)
         .then(response => response.json())
         .then(data => renderDieet(data))
-        .catch(err => console.error(err));
+        .catch(() => {
+            fetch('../voeding.json')
+                .then(response => response.json())
+                .then(data => renderDieet(data))
+                .catch(err => console.error(err));
+        })
 }

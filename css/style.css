@@ -85,6 +85,7 @@ button {
 	background-color: unset;
 	color: #A00078;
 	margin-top: 0.4rem;
+	cursor: pointer;
 }
 
 button::after {
