@@ -8,10 +8,11 @@ export default function render(data) {
     results.forEach((item, i) => {
         const html = `
                 <article>
-                    <h2>${item.titles[0]}</h2>
-                    <p>${item.summaries ? item.summaries[0] : 'Geen samenvatting'}</p>
-                    <img src="${item.coverimages ? item.coverimages[1] : 'Geen samenvatting'} 
-                ">
+                    <img src="${item.coverimages ? item.coverimages[1] : 'Geen samenvatting'}">
+                    <div>
+                        <h2>${item.titles[0]}</h2>
+                        <p>${item.summaries ? item.summaries[0] : 'Geen samenvatting'}</p>
+                    </div>
                 </article>
             `;
         section.insertAdjacentHTML('afterbegin', html);

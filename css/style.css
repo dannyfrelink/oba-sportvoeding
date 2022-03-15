@@ -10,32 +10,36 @@
 }
 
 html {
+	overflow-x: hidden;
 	margin: 0;
 	padding: 0;
 	font-family: 'Avenir', Helvetica, sans-serif;
 }
 
 body {
+	overflow-x: hidden;
+	height: fit-content;
 	max-width: 50em;
 	margin: 0 auto;
 }
 
 main {
 	width: 85vw;
-	margin: 4rem auto;
+	margin: 2.5rem auto;
 }
 
 h1 {
 	display: flex;
 	align-items: center;
 	color: #A00078;
-	font-size: 400%;
+	font-size: 250%;
 	width: fit-content;
 	margin: auto;
 }
 
 h1>span {
 	display: flex;
+	font-size: 1.5rem;
 	color: #000000;
 	align-items: center;
 	writing-mode: vertical-rl;
@@ -44,13 +48,22 @@ h1>span {
 h1>span>span {
 	writing-mode: horizontal-tb;
 	line-height: 60%;
-	margin: -0.3rem 0.4rem 0 0;
+	margin: -0.05rem 0.2rem 0 0;
 }
 
-.turn {
-	transform: rotate(-90deg);
+section {
+	display: flex;
+	width: fit-content;
 }
 
 article {
 	margin-top: 4rem;
+}
+
+article img {
+	height: 11.688rem;
+}
+
+article div {
+	display: none;
 }
