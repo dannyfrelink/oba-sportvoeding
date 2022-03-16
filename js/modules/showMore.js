@@ -1,4 +1,4 @@
-import { sections, uls, buttons } from './variables.js';
+import { sections, pagesizeDiv, uls, buttons } from './variables.js';
 
 export default function showMore(e, search) {
     if (e) {
@@ -13,6 +13,10 @@ export default function showMore(e, search) {
         }
     });
 
+    pagesizeDiv.forEach(div => {
+        div.classList.remove('hidden');
+    })
+
     uls.forEach(ul => {
         ul.classList.add('detail')
     })
@@ -20,7 +24,6 @@ export default function showMore(e, search) {
     const extraArticles = document.querySelectorAll('section article:nth-of-type(n+6)');
     extraArticles.forEach(article => {
         article.classList.add('show');
-        console.log(article)
     })
 
     const infoText = document.querySelectorAll('article div');
