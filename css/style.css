@@ -74,9 +74,13 @@ article * {
 	font-size: 1em;
 }
 
-/* section article:nth-of-type(n+6) {
+section article:nth-of-type(n+6) {
 	display: none;
-} */
+}
+
+section article:nth-of-type(n+6).show {
+	display: flex;
+}
 
 article+article {
 	margin-left: 1rem;
@@ -84,12 +88,10 @@ article+article {
 
 article img {
 	height: 11.688rem;
-	max-width: 42.5vw;
 }
 
 article div {
 	margin-left: 0.75rem;
-	/* display: none; */
 }
 
 article div h2 {
@@ -144,4 +146,5 @@ button::after {
 .detail article img {
 	height: auto;
 	max-height: 11.688rem;
+	max-width: 42.5vw;
 }

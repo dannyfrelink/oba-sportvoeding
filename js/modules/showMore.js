@@ -17,9 +17,16 @@ export default function showMore(e, search) {
         ul.classList.add('detail')
     })
 
-    // infoText.forEach(text => {
-    //     console.log(text)
-    // })
+    const extraArticles = document.querySelectorAll('section article:nth-of-type(n+6)');
+    extraArticles.forEach(article => {
+        article.classList.add('show');
+        console.log(article)
+    })
+
+    const infoText = document.querySelectorAll('article div');
+    infoText.forEach(text => {
+        text.classList.remove('hidden');
+    })
 
     buttons.forEach(button => {
         button.classList.add('hidden');

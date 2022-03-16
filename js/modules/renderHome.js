@@ -8,7 +8,7 @@ export const renderSport = (data) => {
         const html = `
                 <article>
                     <img src="${item.coverimages ? item.coverimages[1] : 'Geen samenvatting'}">
-                    <div>
+                    <div class="hidden">
                         <h2>${item.titles[0]}</h2>
                         <p>${item.authors[0]}</p>
                         <p>${item.languages.join(', ')}</p>
@@ -28,7 +28,7 @@ export const renderNutrition = (data) => {
         const html = `
                 <article>
                     <img src="${item.coverimages ? item.coverimages[1] : 'Geen samenvatting'}">
-                    <div>
+                    <div class="hidden">
                         <h2>${item.titles[0]}</h2>
                         <p>${item.authors[0]}</p>
                         <p>${item.languages.join(', ')}</p>
@@ -48,7 +48,7 @@ export const renderSportsNutrition = (data) => {
         const html = `
                 <article>
                     <img src="${item.coverimages ? item.coverimages[1] : 'Geen samenvatting'}">
-                    <div>
+                    <div class="hidden">
                         <h2>${item.titles[0]}</h2>
                         <p>${item.authors[0]}</p>
                         <p>${item.languages.join(', ')}</p>
@@ -68,7 +68,7 @@ export const renderDiet = (data) => {
         const html = `
                 <article>
                     <img src="${item.coverimages ? item.coverimages[1] : 'Geen samenvatting'}">
-                    <div>
+                    <div class="hidden">
                         <h2>${item.titles[0]}</h2>
                         <p>${item.authors[0]}</p>
                         <p>${item.languages.join(', ')}</p>
