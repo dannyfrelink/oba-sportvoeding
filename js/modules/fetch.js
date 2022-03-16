@@ -1,5 +1,18 @@
 import { renderSport, renderNutrition, renderSportsNutrition, renderDiet } from "./renderHome.js";
-import { cors, endpoint, key, detail, pagesize, config } from './variables.js';
+import { cors, endpoint, key, detail, config, pagesizeSelect } from './variables.js';
+
+// fetch('https://obaliquid.staging.aquabrowser.nl/onderwijs/api/v1/search/?q=voeding+NOT+lom.lifecycle.contribute.publisher%3Dwikipedia&authorization=76f45dfa187d66be5fd6af05573eab04')
+//     .then(res => res.json())
+//     .then(data => console.log(data))
+
+let pagesize = '15';
+pagesizeSelect.addEventListener('change', () => {
+    pagesize = pagesizeSelect.value;
+    fetchSportData();
+    fetchNutritionData();
+    fetchSportsNutritionData();
+    fetchDietData();
+})
 
 // Fetch sports data
 export const fetchSportData = () => {
