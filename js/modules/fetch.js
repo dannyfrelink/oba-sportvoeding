@@ -1,4 +1,3 @@
-// import renderHash from "./renderHash.js";
 import { renderSport, renderNutrition, renderSportsNutrition, renderDiet } from "./renderHome.js";
 import { cors, endpoint, key, detail, pagesize, config } from './variables.js';
 
