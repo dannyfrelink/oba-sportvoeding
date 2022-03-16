@@ -1,21 +1,24 @@
 import { renderSport, renderNutrition, renderSportsNutrition, renderDiet } from "./renderHome.js";
-import { cors, endpoint, key, detail, config, pagesizeSelect } from './variables.js';
+import { cors, endpoint, key, detail, config, pagesizeSelects } from './variables.js';
 
 // fetch('https://obaliquid.staging.aquabrowser.nl/onderwijs/api/v1/search/?q=voeding+NOT+lom.lifecycle.contribute.publisher%3Dwikipedia&authorization=76f45dfa187d66be5fd6af05573eab04')
 //     .then(res => res.json())
 //     .then(data => console.log(data))
 
 let pagesize = '15';
-pagesizeSelect.addEventListener('change', () => {
-    pagesize = pagesizeSelect.value;
-    fetchSportData();
-    fetchNutritionData();
-    fetchSportsNutritionData();
-    fetchDietData();
+pagesizeSelects.forEach(select => {
+    select.addEventListener('change', () => {
+        pagesize = select.value;
+        fetchSportData();
+        fetchNutritionData();
+        fetchSportsNutritionData();
+        fetchDietData();
+    })
 })
 
 // Fetch sports data
 export const fetchSportData = () => {
+    console.log(pagesize)
     const url = `${cors}${endpoint}sport&authorization=${key}&detaillevel=${detail}&pagesize=${pagesize}&output=json`;
 
     fetch(url, config)
@@ -31,6 +34,7 @@ export const fetchSportData = () => {
 
 // Fetch nutrition data
 export const fetchNutritionData = () => {
+
     const url = `${cors}${endpoint}voeding&authorization=${key}&detaillevel=${detail}&pagesize=${pagesize}&output=json`;
 
     fetch(url, config)

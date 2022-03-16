@@ -11,12 +11,12 @@ const config = {
 /* Render */
 const sections = document.querySelectorAll('section');
 const pagesizeDiv = document.querySelectorAll('section>div div');
-const pagesizeSelect = document.querySelector('select')
-const uls = document.querySelectorAll('section ul')
+const pagesizeSelects = document.querySelectorAll('select');
+const uls = document.querySelectorAll('section ul');
 const ulSport = document.querySelector('#sport ul');
 const ulNutrition = document.querySelector('#voeding ul');
 const ulSportsNutrition = document.querySelector('#sportvoeding ul');
 const ulDiet = document.querySelector('#dieet ul');
 const buttons = document.querySelectorAll('button');
 
-export { cors, endpoint, key, detail, config, sections, pagesizeDiv, pagesizeSelect, uls, ulSport, ulNutrition, ulSportsNutrition, ulDiet, buttons }
+export { cors, endpoint, key, detail, config, sections, pagesizeDiv, pagesizeSelects, uls, ulSport, ulNutrition, ulSportsNutrition, ulDiet, buttons }
