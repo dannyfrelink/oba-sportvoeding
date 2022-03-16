@@ -18,7 +18,6 @@ pagesizeSelects.forEach(select => {
 
 // Fetch sports data
 export const fetchSportData = () => {
-    console.log(pagesize)
     const url = `${cors}${endpoint}sport&authorization=${key}&detaillevel=${detail}&pagesize=${pagesize}&output=json`;
 
     fetch(url, config)
