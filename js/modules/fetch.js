@@ -10,15 +10,12 @@ let pagesize = '15';
 pagesizeSelects.forEach(select => {
     select.addEventListener('change', () => {
         pagesize = select.value;
-        fetchSportData();
-        fetchNutritionData();
-        fetchSportsNutritionData();
-        fetchDietData();
+        fetches();
     })
 })
 
 // Fetch sports data
-export const fetchSportData = () => {
+const fetchSportData = () => {
     const url = `${cors}${endpoint}sport&authorization=${key}&detaillevel=${detail}&pagesize=${pagesize}&output=json`;
 
     fetch(url, config)
@@ -39,7 +36,7 @@ export const fetchSportData = () => {
 }
 
 // Fetch nutrition data
-export const fetchNutritionData = () => {
+const fetchNutritionData = () => {
 
     const url = `${cors}${endpoint}voeding&authorization=${key}&detaillevel=${detail}&pagesize=${pagesize}&output=json`;
 
@@ -61,7 +58,7 @@ export const fetchNutritionData = () => {
 }
 
 // Fetch sports nutrition data
-export const fetchSportsNutritionData = () => {
+const fetchSportsNutritionData = () => {
     const url = `${cors}${endpoint}sportvoeding&authorization=${key}&detaillevel=${detail}&pagesize=${pagesize}&output=json`;
 
     fetch(url, config)
@@ -82,7 +79,7 @@ export const fetchSportsNutritionData = () => {
 }
 
 // Fetch diet data
-export const fetchDietData = () => {
+const fetchDietData = () => {
     const url = `${cors}${endpoint}dieet&authorization=${key}&detaillevel=${detail}&pagesize=${pagesize}&output=json`;
 
     return new Promise((resolve, reject) => {
@@ -103,4 +100,11 @@ export const fetchDietData = () => {
                     .catch(err => console.error(err));
             })
     })
+}
+
+export const fetches = () => {
+    fetchSportData();
+    fetchNutritionData();
+    fetchSportsNutritionData();
+    fetchDietData();
 }
