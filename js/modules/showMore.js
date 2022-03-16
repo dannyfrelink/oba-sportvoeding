@@ -15,28 +15,28 @@ export default function showMore(e, search) {
 
     pagesizeDiv.forEach(div => {
         div.classList.remove('hidden');
-    })
+    });
 
     uls.forEach(ul => {
         ul.classList.add('detail')
-    })
+    });
 
     const extraArticles = document.querySelectorAll('section article:nth-of-type(n+6)');
     extraArticles.forEach(article => {
         article.classList.add('show');
-    })
+    });
 
     const infoText = document.querySelectorAll('article div');
     infoText.forEach(text => {
         text.classList.remove('hidden');
-    })
+    });
 
     buttons.forEach(button => {
         button.classList.add('hidden');
-    })
+    });
 
 }
 
 buttons.forEach(button => {
     button.addEventListener('click', showMore);
-})
+});

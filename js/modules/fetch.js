@@ -1,4 +1,5 @@
 import { renderSport, renderNutrition, renderSportsNutrition, renderDiet } from "./renderHome.js";
+import handleRoutes from "./router.js";
 import { cors, endpoint, key, detail, config, pagesizeSelects } from './variables.js';
 
 // fetch('https://obaliquid.staging.aquabrowser.nl/onderwijs/api/v1/search/?q=voeding+NOT+lom.lifecycle.contribute.publisher%3Dwikipedia&authorization=76f45dfa187d66be5fd6af05573eab04')
@@ -22,11 +23,17 @@ export const fetchSportData = () => {
 
     fetch(url, config)
         .then(response => response.json())
-        .then(data => renderSport(data))
+        .then(data => {
+            renderSport(data);
+            handleRoutes()
+        })
         .catch(() => {
             fetch('../nutrition.json')
                 .then(response => response.json())
-                .then(data => renderSport(data))
+                .then(data => {
+                    renderSport(data);
+                    handleRoutes();
+                })
                 .catch(err => console.error(err));
         })
 }
@@ -38,11 +45,17 @@ export const fetchNutritionData = () => {
 
     fetch(url, config)
         .then(response => response.json())
-        .then(data => renderNutrition(data))
+        .then(data => {
+            renderNutrition(data);
+            handleRoutes()
+        })
         .catch(() => {
             fetch('../nutrition.json')
                 .then(response => response.json())
-                .then(data => renderNutrition(data))
+                .then(data => {
+                    renderNutrition(data);
+                    handleRoutes()
+                })
                 .catch(err => console.error(err));
         })
 }
@@ -53,11 +66,17 @@ export const fetchSportsNutritionData = () => {
 
     fetch(url, config)
         .then(response => response.json())
-        .then(data => renderSportsNutrition(data))
+        .then(data => {
+            renderSportsNutrition(data);
+            handleRoutes()
+        })
         .catch(() => {
             fetch('../nutrition.json')
                 .then(response => response.json())
-                .then(data => renderSportsNutrition(data))
+                .then(data => {
+                    renderSportsNutrition(data);
+                    handleRoutes()
+                })
                 .catch(err => console.error(err));
         })
 }
@@ -66,13 +85,22 @@ export const fetchSportsNutritionData = () => {
 export const fetchDietData = () => {
     const url = `${cors}${endpoint}dieet&authorization=${key}&detaillevel=${detail}&pagesize=${pagesize}&output=json`;
 
-    fetch(url, config)
-        .then(response => response.json())
-        .then(data => renderDiet(data))
-        .catch(() => {
-            fetch('../nutrition.json')
-                .then(response => response.json())
-                .then(data => renderDiet(data))
-                .catch(err => console.error(err));
-        })
+    return new Promise((resolve, reject) => {
+        fetch(url, config)
+            .then(res => resolve(res))
+            .then(response => response.json())
+            .then(data => {
+                renderDiet(data);
+                handleRoutes()
+            })
+            .catch(() => {
+                fetch('../nutrition.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        renderDiet(data);
+                        handleRoutes()
+                    })
+                    .catch(err => console.error(err));
+            })
+    })
 }
