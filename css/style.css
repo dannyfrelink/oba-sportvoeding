@@ -65,6 +65,10 @@ section>div {
 	align-items: center;
 }
 
+section>div:last-of-type.flexend {
+	justify-content: flex-end;
+}
+
 section>div label {
 	font-style: italic;
 }

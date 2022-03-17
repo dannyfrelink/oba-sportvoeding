@@ -1,7 +1,8 @@
 import { renderSport, renderNutrition, renderSportsNutrition, renderDiet, renderExtraMaterials } from "./renderHome.js";
 import handleRoutes from "./router.js";
-import { cors, endpoint, key, detail, config, pagesizeSelects, previousButtons, nextButtons } from './variables.js';
+import { cors, endpoint, key, detail, config, pagesizeSelects, previousButtons, nextButtons, navigationDivs } from './variables.js';
 
+// Change pagesize depending on selected value
 let pagesize = '15';
 pagesizeSelects.forEach(select => {
     select.addEventListener('change', () => {
@@ -10,32 +11,40 @@ pagesizeSelects.forEach(select => {
     });
 });
 
-let counter = '1';
+// Create counter for previous and next buttons
+let counter = 1;
 previousButtons.forEach(button => {
     button.addEventListener('click', () => {
         counter--;
         fetches();
+        if (counter == 1) {
+            // Remove previous button on first page
+            button.classList.add('hidden');
+
+            // Change justify content to flex-end
+            navigationDivs.forEach(div => {
+                div.classList.add('flexend');
+            });
+        }
     });
 });
 nextButtons.forEach(button => {
     button.addEventListener('click', () => {
         counter++;
         fetches();
+        if (counter > 1) {
+            // Show previous button from second page and onwards
+            previousButtons.forEach(button => {
+                button.classList.remove('hidden');
+            });
+
+            // Change justify content to space-between
+            navigationDivs.forEach(div => {
+                div.classList.remove('flexend');
+            });
+        }
     });
 });
-
-const fetchExtraMaterials = () => {
-    const url = `${cors}http://obaliquid.staging.aquabrowser.nl/onderwijs/api/v1/search/?q=voeding+NOT+lom.lifecycle.contribute.publisher%3Dwikipedia&authorization=76f45dfa187d66be5fd6af05573eab04&output=json`
-    fetch(url, config)
-        .then(res => res.json())
-        .then(data => renderExtraMaterials(data))
-        .catch(() => {
-            fetch('../api2.json')
-                .then(response => response.json())
-                .then(data => renderExtraMaterials(data))
-                .catch(err => console.error(err));
-        });
-}
 
 // Fetch sports data
 const fetchSportData = () => {
@@ -118,6 +127,20 @@ const fetchDietData = () => {
                     renderDiet(data);
                     handleRoutes();
                 })
+                .catch(err => console.error(err));
+        });
+}
+
+// Fetch extra materials data
+const fetchExtraMaterials = () => {
+    const url = `${cors}http://obaliquid.staging.aquabrowser.nl/onderwijs/api/v1/search/?q=voeding+NOT+lom.lifecycle.contribute.publisher%3Dwikipedia&authorization=76f45dfa187d66be5fd6af05573eab04&output=json`
+    fetch(url, config)
+        .then(res => res.json())
+        .then(data => renderExtraMaterials(data))
+        .catch(() => {
+            fetch('../api2.json')
+                .then(response => response.json())
+                .then(data => renderExtraMaterials(data))
                 .catch(err => console.error(err));
         });
 }

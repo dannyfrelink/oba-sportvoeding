@@ -1,6 +1,6 @@
 import { ulSport, ulNutrition, ulSportsNutrition, ulDiet, ulExtraMaterials } from "./variables.js";
 
-// render sport data
+// Render sport data
 export const renderSport = (data) => {
     ulSport.innerHTML = '';
     const results = data.results;
@@ -20,7 +20,7 @@ export const renderSport = (data) => {
     });
 }
 
-// render nutrition data
+// Render nutrition data
 export const renderNutrition = (data) => {
     ulNutrition.innerHTML = '';
     const results = data.results;
@@ -41,7 +41,7 @@ export const renderNutrition = (data) => {
     });
 }
 
-// render sports nutrition data
+// Render sports nutrition data
 export const renderSportsNutrition = (data) => {
     ulSportsNutrition.innerHTML = '';
     const results = data.results;
@@ -61,7 +61,7 @@ export const renderSportsNutrition = (data) => {
     });
 }
 
-// render dieet data
+// Render dieet data
 export const renderDiet = (data) => {
     ulDiet.innerHTML = '';
     const results = data.results;
@@ -81,7 +81,7 @@ export const renderDiet = (data) => {
     });
 }
 
-// render extra materials data
+// Render extra materials data
 export const renderExtraMaterials = (data) => {
     ulExtraMaterials.innerHTML = '';
     const results = data.results;

@@ -13,6 +13,7 @@ export default function showMore(e, search) {
         }
     });
 
+    // Show extra content of detail page
     pagesizeDiv.forEach(div => {
         div.classList.remove('hidden');
     });
