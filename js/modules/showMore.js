@@ -18,7 +18,7 @@ export default function showMore(e, search) {
     });
 
     uls.forEach(ul => {
-        ul.classList.add('detail')
+        ul.classList.add('detail');
     });
 
     const extraArticles = document.querySelectorAll('section article:nth-of-type(n+6)');
@@ -36,8 +36,8 @@ export default function showMore(e, search) {
     });
 
     navigationDivs.forEach(div => {
-        div.classList.remove('hidden')
-    })
+        div.classList.remove('hidden');
+    });
 }
 
 buttons.forEach(button => {

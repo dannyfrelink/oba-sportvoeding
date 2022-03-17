@@ -2,7 +2,7 @@ import { renderSport, renderNutrition, renderSportsNutrition, renderDiet } from 
 import handleRoutes from "./router.js";
 import { cors, endpoint, key, detail, config, pagesizeSelects, previousButtons, nextButtons } from './variables.js';
 
-fetch('http://obaliquid.staging.aquabrowser.nl/onderwijs/api/v1/search/?q=voeding+NOT+lom.lifecycle.contribute.publisher%3Dwikipedia&authorization=76f45dfa187d66be5fd6af05573eab04')
+fetch(`${cors}http://obaliquid.staging.aquabrowser.nl/onderwijs/api/v1/search/?q=voeding+NOT+lom.lifecycle.contribute.publisher%3Dwikipedia&authorization=76f45dfa187d66be5fd6af05573eab04`)
     .then(res => res.json())
     .then(data => console.log(data))
 
@@ -36,7 +36,7 @@ const fetchSportData = () => {
         .then(response => response.json())
         .then(data => {
             renderSport(data);
-            handleRoutes()
+            handleRoutes();
         })
         .catch(() => {
             fetch('../nutrition.json')
@@ -46,7 +46,7 @@ const fetchSportData = () => {
                     handleRoutes();
                 })
                 .catch(err => console.error(err));
-        })
+        });
 }
 
 // Fetch nutrition data
@@ -57,17 +57,17 @@ const fetchNutritionData = () => {
         .then(response => response.json())
         .then(data => {
             renderNutrition(data);
-            handleRoutes()
+            handleRoutes();
         })
         .catch(() => {
             fetch('../nutrition.json')
                 .then(response => response.json())
                 .then(data => {
                     renderNutrition(data);
-                    handleRoutes()
+                    handleRoutes();
                 })
                 .catch(err => console.error(err));
-        })
+        });
 }
 
 // Fetch sports nutrition data
@@ -78,17 +78,17 @@ const fetchSportsNutritionData = () => {
         .then(response => response.json())
         .then(data => {
             renderSportsNutrition(data);
-            handleRoutes()
+            handleRoutes();
         })
         .catch(() => {
             fetch('../nutrition.json')
                 .then(response => response.json())
                 .then(data => {
                     renderSportsNutrition(data);
-                    handleRoutes()
+                    handleRoutes();
                 })
                 .catch(err => console.error(err));
-        })
+        });
 }
 
 // Fetch diet data
@@ -99,17 +99,17 @@ const fetchDietData = () => {
         .then(response => response.json())
         .then(data => {
             renderDiet(data);
-            handleRoutes()
+            handleRoutes();
         })
         .catch(() => {
             fetch('../nutrition.json')
                 .then(response => response.json())
                 .then(data => {
                     renderDiet(data);
-                    handleRoutes()
+                    handleRoutes();
                 })
                 .catch(err => console.error(err));
-        })
+        });
 }
 
 export const fetches = () => {
