@@ -133,7 +133,7 @@ const fetchDietData = () => {
 
 // Fetch extra materials data
 const fetchExtraMaterials = () => {
-    const url = `${cors}http://obaliquid.staging.aquabrowser.nl/onderwijs/api/v1/search/?q=voeding+NOT+lom.lifecycle.contribute.publisher%3Dwikipedia&authorization=76f45dfa187d66be5fd6af05573eab04&output=json`
+    const url = `${cors}http://obaliquid.staging.aquabrowser.nl/onderwijs/api/v1/search/?q=voeding+NOT+lom.lifecycle.contribute.publisher%3Dwikipedia&authorization=${key}&output=json`
     fetch(url, config)
         .then(res => res.json())
         .then(data => renderExtraMaterials(data))
