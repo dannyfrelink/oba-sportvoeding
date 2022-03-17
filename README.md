@@ -25,7 +25,7 @@ Home pagina              |  Detail pagina
 
 Ik had graag nog een detailpagina voor ieder individueel boek gemaakt, zodat de gebruiker nog 1 pagina verder zou kunnen klikken. Helaas ben ik hier door het gebrek aan tijd niet aan toe gekomen. Ook had ik nog wel wat meer tijd voor eventuele verbetering in de styling willen hebben. Helaas door de vele problemen met de API en de wifi in deze week, heb ik ook hier weinig tijd voor overgehouden.
 
-## 🔧 Installation
+## 🔧 Installatie
 
 Als je mijn code wilt gebruiken, kan je deze op de volgende manier klonen:
 
