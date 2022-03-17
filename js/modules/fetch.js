@@ -138,7 +138,7 @@ const fetchExtraMaterials = () => {
         .then(res => res.json())
         .then(data => renderExtraMaterials(data))
         .catch(() => {
-            fetch('../api2.json')
+            fetch('../extraMaterials.json')
                 .then(response => response.json())
                 .then(data => renderExtraMaterials(data))
                 .catch(err => console.error(err));
