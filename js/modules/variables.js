@@ -17,6 +17,8 @@ const ulSport = document.querySelector('#sport ul');
 const ulNutrition = document.querySelector('#voeding ul');
 const ulSportsNutrition = document.querySelector('#sportvoeding ul');
 const ulDiet = document.querySelector('#dieet ul');
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('section>button');
+const previousButtons = document.querySelectorAll('#previous');
+const nextButtons = document.querySelectorAll('#next');
 
-export { cors, endpoint, key, detail, config, sections, pagesizeDiv, pagesizeSelects, uls, ulSport, ulNutrition, ulSportsNutrition, ulDiet, buttons }
+export { cors, endpoint, key, detail, config, sections, pagesizeDiv, pagesizeSelects, uls, ulSport, ulNutrition, ulSportsNutrition, ulDiet, buttons, previousButtons, nextButtons }

@@ -129,6 +129,12 @@ article div p:first-of-type {
 	margin-bottom: 0.75rem;
 }
 
+#previous::before {
+	content: '\003C';
+	font-size: 130%;
+	margin-right: 0.3rem;
+}
+
 button {
 	display: flex;
 	align-items: center;
@@ -139,7 +145,7 @@ button {
 	cursor: pointer;
 }
 
-button::after {
+button:not(#previous)::after {
 	content: '\003E';
 	font-size: 130%;
 	margin-left: 0.3rem;
