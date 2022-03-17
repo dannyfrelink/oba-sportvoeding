@@ -1,4 +1,4 @@
-import { sections, pagesizeDiv, uls, buttons } from './variables.js';
+import { sections, pagesizeDiv, uls, buttons, navigationDivs } from './variables.js';
 
 export default function showMore(e, search) {
     if (e) {
@@ -35,6 +35,9 @@ export default function showMore(e, search) {
         button.classList.add('hidden');
     });
 
+    navigationDivs.forEach(div => {
+        div.classList.remove('hidden')
+    })
 }
 
 buttons.forEach(button => {
