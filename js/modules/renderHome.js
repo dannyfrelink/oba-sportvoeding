@@ -9,9 +9,9 @@ export const renderSport = (data) => {
                 <article>
                     <img src="${item.coverimages ? item.coverimages[1] : 'Geen samenvatting'}">
                     <div class="hidden">
-                        <h2>${item.titles[0]}</h2>
+                        <h2>${item.titles ? item.titles[0] : 'Geen titel'}</h2>
                         <p>${item.authors ? item.authors[0] : 'Geen auteur'}</p>
-                        <p>${item.languages.join(', ')}</p>
+                        <p>${item.languages ? item.languages.join(', ') : 'Geen taal'}</p>
                         <p>${item.summaries ? item.summaries[0] : 'Geen samenvatting'}</p>
                     </div>
                 </article>
@@ -30,9 +30,9 @@ export const renderNutrition = (data) => {
                 <article>
                     <img src="${item.coverimages ? item.coverimages[1] : 'Geen samenvatting'}">
                     <div class="hidden">
-                        <h2>${item.titles[0]}</h2>
+                        <h2>${item.titles ? item.titles[0] : 'Geen titel'}</h2>
                         <p>${item.authors ? item.authors[0] : 'Geen auteur'}</p>
-                        <p>${item.languages.join(', ')}</p>
+                        <p>${item.languages ? item.languages.join(', ') : 'Geen taal'}</p>
                         <p>${item.summaries ? item.summaries[0] : 'Geen samenvatting'}</p>
                     </div>
                 </article>
@@ -50,9 +50,9 @@ export const renderSportsNutrition = (data) => {
                 <article>
                     <img src="${item.coverimages ? item.coverimages[1] : 'Geen samenvatting'}">
                     <div class="hidden">
-                        <h2>${item.titles[0]}</h2>
+                        <h2>${item.titles ? item.titles[0] : 'Geen titel'}</h2>
                         <p>${item.authors ? item.authors[0] : 'Geen auteur'}</p>
-                        <p>${item.languages.join(', ')}</p>
+                        <p>${item.languages ? item.languages.join(', ') : 'Geen taal'}</p>
                         <p>${item.summaries ? item.summaries[0] : 'Geen samenvatting'}</p>
                     </div>
                 </article>
@@ -70,9 +70,9 @@ export const renderDiet = (data) => {
                 <article>
                     <img src="${item.coverimages ? item.coverimages[1] : 'Geen samenvatting'}">
                     <div class="hidden">
-                        <h2>${item.titles[0]}</h2>
+                        <h2>${item.titles ? item.titles[0] : 'Geen titel'}</h2>
                         <p>${item.authors ? item.authors[0] : 'Geen auteur'}</p>
-                        <p>${item.languages.join(', ')}</p>
+                        <p>${item.languages ? item.languages.join(', ') : 'Geen taal'}</p>
                         <p>${item.summaries ? item.summaries[0] : 'Geen samenvatting'}</p>
                     </div>
                 </article>
@@ -90,9 +90,9 @@ export const renderExtraMaterials = (data) => {
                 <article>
                     <img src="https://v112.nbc.bibliotheek.nl/thumbnail?uri=http://data.bibliotheek.nl/ggc/ppn/82309541X&token=c1322402" alt="placeholder"/>
                     <div class="hidden">
-                        <h2>${item.titles[0]}</h2>
+                        <h2>${item.titles ? item.titles[0] : 'Geen titel'}</h2>
                         <p>${item.authors ? item.authors[0] : 'Geen auteur'}</p>
-                        <p>${item.languages.join(', ')}</p>
+                        <p>${item.languages ? item.languages.join(', ') : 'Geen taal'}</p>
                         <p>${item.summaries ? item.summaries[0] : 'Geen samenvatting'}</p>
                     </div>
                 </article>
