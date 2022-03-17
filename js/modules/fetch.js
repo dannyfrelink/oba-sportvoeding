@@ -2,9 +2,17 @@ import { renderSport, renderNutrition, renderSportsNutrition, renderDiet } from 
 import handleRoutes from "./router.js";
 import { cors, endpoint, key, detail, config, pagesizeSelects, previousButtons, nextButtons } from './variables.js';
 
-fetch(`${cors}http://obaliquid.staging.aquabrowser.nl/onderwijs/api/v1/search/?q=voeding+NOT+lom.lifecycle.contribute.publisher%3Dwikipedia&authorization=76f45dfa187d66be5fd6af05573eab04`)
+fetch(`${cors}http://obaliquid.staging.aquabrowser.nl/onderwijs/api/v1/search/?q=voeding+NOT+lom.lifecycle.contribute.publisher%3Dwikipedia&authorization=76f45dfa187d66be5fd6af05573eab04&output=json`)
     .then(res => res.json())
     .then(data => console.log(data))
+    .catch(() => {
+        fetch('../api2.json')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.results)
+            })
+            .catch(err => console.error(err));
+    });
 
 let pagesize = '15';
 pagesizeSelects.forEach(select => {
